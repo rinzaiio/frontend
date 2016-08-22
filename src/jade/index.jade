@@ -4,4 +4,20 @@ html
     title Rinzai
     link(rel='stylesheet', href='main.css')
   body
+    div(id='container')
+      div(id='retrieve-area')
+        button
+          i(class='fa fa-random', aria-hidden='true')
+      div(id='list-area')
+        ul
+          li Do a thing
+          li Do something else
+          li(class='done') Something that's done
+      div(id='add-area')
+        input(type='text')
+        button
+          i(class='fa fa-plus' aria-hidden='true')
+
+    // Scripts
+    script(src='https://use.fontawesome.com/4643f42f64.js')
     script(src='main.js')
