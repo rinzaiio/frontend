@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var coffee = require('gulp-coffee');
-var jade = require('gulp-jade');
+var pug = require('gulp-pug');
 var sass = require('gulp-sass');
 
 gulp.task('sass', function(){
@@ -15,16 +15,16 @@ gulp.task('coffee', function(){
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('jade', ['sass', 'coffee'], function(){
-  gulp.src(['src/jade/**/*.jade', '!src/jade/**/_*.jade'])
-    .pipe(jade())
+gulp.task('pug', ['sass', 'coffee'], function(){
+  gulp.src(['src/pug/**/*.pug', '!src/pug/**/_*.pug'])
+    .pipe(pug())
     .pipe(gulp.dest('public'));
 });
 
 gulp.task('watch', function(){
   gulp.watch('src/sass/**/*.scss', ['sass']);
   gulp.watch('src/coffee/**/*.coffee', ['coffee']);
-  gulp.watch('src/jade/**/*.jade', ['jade']);
+  gulp.watch('src/pug/**/*.pug', ['pug']);
 });
 
-gulp.task('default', ['watch', 'sass', 'coffee', 'jade']);
+gulp.task('default', ['watch', 'sass', 'coffee', 'pug']);
